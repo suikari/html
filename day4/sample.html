@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mq 테스트</title>
+  <style>
+    * {
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    body {
+        background:rgb(9, 100, 160);
+    }
+
+    img{
+        width: 300px;
+        height: 250px;
+    }
+    #container {
+        width:1140px;
+        margin:50px auto;
+    }    
+    .card {
+        position:relative;
+        float:left;  /* 카드를 가로로 배치 */
+        max-width:550px;
+        width : 100%;
+        min-width: 300px;
+        height:250px;
+        margin:10px;
+        border:1px solid #0f0f0f33;
+        background-color:#ffffff;      
+    }
+    .words {
+        position:absolute;    
+        left:310px;
+        top:70px;
+        text-align:center;
+        width:200px;          
+    }
+  
+
+    
+    @media (max-width: 800px){
+
+        .card {
+            height: 400px;
+            width: 0%;
+            float: none;
+            margin: 10px auto;
+        }
+        
+        .words {
+            position: initial;
+            width: 100%;
+        }
+
+        #container {
+            width: 100%;
+        }
+
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="card">
+      <img src="image/dw.jfif">    
+      <div class="words">
+        <h2>qwer</h2>
+        <h3>- asdf</h3>
+      </div>            
+    </div>
+    <div class="card">
+      <img src="image/dw2.jfif">    
+      <div class="words">
+        <h2>t2t2t</h2>
+        <h3>- t2t2</h3>
+      </div>            
+    </div>            
+  </div>
+</body>
+</html>
+​
