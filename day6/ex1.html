@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div> 숫자 입력 <input id="val" type="text"/></div>
+    <input type="button" value="리스트 추가" onclick="setlist();"/>
+
+    <div id="vallist">
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    function setlist(){
+        let val = document.getElementById('val').value;
+        let content;
+        let html = '';
+
+        for( i=1;i<=val;i++ ){
+            
+            if ( i % 3 == 0 ) {
+                content = "<font style='color:blue'>" + i + "</font>";
+            } else {
+                content = "<font style=''>" + i + "</font>";
+            }
+            html += '<li>'+ content +'</li>';
+        }
+
+        document.getElementById("vallist").innerHTML = html;
+        // $("#vallist").append(html);
+
+
+    }
+
+</script>
