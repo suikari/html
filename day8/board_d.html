@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 상세 보기</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .post-header h2 {
+            margin: 0;
+        }
+
+        .post-meta {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .post-content {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .post-content p {
+            margin: 10px 0;
+        }
+
+        .post-actions {
+            text-align: center;
+        }
+
+        .post-actions a {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .post-actions a:hover {
+            background-color: #45a049;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .post-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .post-header h2 {
+                font-size: 24px;
+            }
+
+            .post-meta {
+                font-size: 12px;
+            }
+
+            .post-actions a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .post-header h2 {
+                font-size: 20px;
+            }
+
+            .post-meta {
+                font-size: 10px;
+            }
+
+            .post-content {
+                font-size: 14px;
+            }
+
+            .post-actions a {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>게시글 상세 보기</h1>
+
+    <div class="post-header">
+        <h2>HTML 게시판 만들기</h2>
+        <div class="post-meta">
+            작성자: 홍길동 | 작성일: 2025-02-13 | 조회수: 100
+        </div>
+    </div>
+
+    <div class="post-content">
+        <p>안녕하세요, 이번 글에서는 HTML로 게시판을 만드는 방법에 대해 소개하려고 합니다. HTML과 CSS를 사용하여 기본적인 레이아웃을 구성하고, 다양한 기능을 추가하는 방법을 설명할 것입니다.</p>
+        <p>게시판을 만들기 위해서는 HTML 구조를 잡고, CSS로 스타일을 적용한 뒤, JavaScript로 동적인 기능을 추가해야 합니다. 각 항목에 대해 상세히 설명하고, 예제를 함께 제공할 예정입니다.</p>
+        <p>게시판에서는 글쓰기, 검색, 목록 보기 기능 등을 포함시킬 수 있습니다. 또한, 반응형 디자인을 적용하여 모바일 기기에서도 잘 보이도록 할 수 있습니다.</p>
+    </div>
+
+    <div class="post-actions">
+        <a href="board.html">목록으로 돌아가기</a>
+        <a href="#">이전 글</a>
+        <a href="#">다음 글</a>
+    </div>
+</div>
+
+</body>
+</html>

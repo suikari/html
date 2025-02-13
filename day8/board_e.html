@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 작성</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], input[type="date"], textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 200px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #f44336;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .back-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+
+            .back-btn {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+
+            .back-btn {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>게시글 작성</h1>
+
+    <!-- 게시글 작성 폼 -->
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="title">제목</label>
+            <input type="text" id="title" name="title" placeholder="제목을 입력하세요" required>
+        </div>
+
+        <div class="form-group">
+            <label for="author">작성자</label>
+            <input type="text" id="author" name="author" placeholder="작성자를 입력하세요" required>
+        </div>
+
+        <div class="form-group">
+            <label for="date">작성일</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="content">내용</label>
+            <textarea id="content" name="content" placeholder="게시글 내용을 입력하세요" required></textarea>
+        </div>
+
+        <button type="submit">게시글 작성</button>
+    </form>
+
+    <a href="board.html" class="back-btn">목록으로 돌아가기</a>
+</div>
+
+</body>
+</html>

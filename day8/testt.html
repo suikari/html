@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+.slide-text-wrapper {
+  .slide-container {
+    overflow: hidden;
+
+    .slide-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    .slide {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      position: relative;
+
+      &.original {
+        animation: 18s linear infinite normal none running infiniteAnimation1;
+      }
+      &.clone {
+        animation: 18s linear infinite infiniteAnimation2;
+      }
+
+      li {
+        margin: 0 1.25rem;
+        .item {
+          width: max-content;
+          height: 100%;
+          color: var(--gray-scale-900, #1a1a1a);
+          font-size: 1.25rem;
+          font-weight: 700;
+          line-height: 1.875rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes infiniteAnimation1 {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  50.1% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes infiniteAnimation2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+</style>
+
+<body>
+    
+    <div class="slide-text-wrapper">
+        <div class="slide-container">
+          <ul class="slide-wrapper">
+            <div class="slide original">
+              <li>
+                <div class="item">
+                  안녕하세요?&nbsp;&nbsp;&nbsp;&nbsp; 잘 부탁드립니다!!
+                </div>
+              </li>
+            </div>
+            <div class="slide clone">
+              <li>
+                <div class="item">
+                  안녕하세요?&nbsp;&nbsp;&nbsp;&nbsp; 잘 부탁드립니다!!
+                </div>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+</body>
+</html>
+
+
+
+
+

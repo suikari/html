@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 테스트</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <select v-model="searchCategory">
+                <option value="id" selected>ID</option>
+                <option value="name">이름</option>
+                <option value="email">이메일</option>
+                <option value="website">웹사이트</option>
+            </select>
+            <label>검색: </label>
+            <input type="text" v-model="searchQuery" placeholder="검색어 입력">
+        </div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>이름</th>
+                    <th>이메일</th>
+                    <th>웹사이트</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="user in users" :key="user.id">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.website }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                users: [],
+                searchQuery: '',
+                searchCategory: 'id'
+            },
+            computed: {
+                filteredUsers() {
+                    return this.users.filter(user => {
+                        const query = this.searchQuery.toLowerCase();
+                        return user[this.searchCategory].toString().toLowerCase().includes(query);
+                    });
+                }
+            },
+            created() {
+                this.fetchData();
+            },
+            methods: {
+                fetchData() {
+                    $.ajax({
+                        url: 'https://jsonplaceholder.typicode.com/users',
+                        method: 'GET',
+                        dataType: 'json',
+                        success: (data) => {
+                            this.users = data;
+                        },
+                        error: (xhr, status, error) => {
+                            console.error('데이터를 불러오는 중 오류 발생:', error);
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

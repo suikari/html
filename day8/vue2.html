@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.3.3"></script>
+
+</head>
+<body>
+    <div id="app">
+        나이 : <input v-model="inputAge" type="text"/>
+        <div v-if="age >= 30 " style="color: blue;">30살 이상</div>
+        <div v-else style="color: red;">30살 미만</div>
+
+    </div>
+    <div>
+        <button @click="fnAge">클릭</button>
+    </div> 
+</body>
+</html>
+
+<script>
+
+    const app = Vue.createApp({
+        data() {
+            retun
+            inputAge = "",
+            age = 0
+        },
+        methods : {
+            fnAge : function(){
+                let self = this;
+                self.age = self.inputAge;
+            }
+        }
+    })
+
+</script>
+
+
