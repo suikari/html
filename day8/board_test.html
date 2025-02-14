@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 작성</title>
+    <!-- Flatpickr CSS 추가 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .board_container {
+            width: 80%;
+            max-width: 1000px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .board_title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .board_form-group {
+            margin-bottom: 20px;
+        }
+
+        .board_form-label {
+            font-size: 16px;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .board_form-input, .board_form-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .board_form-textarea {
+            resize: vertical;
+            height: 200px;
+        }
+
+        .board_btn {
+            display: block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .board_btn:hover {
+            background-color: #45a049;
+        }
+
+        .board_btn-cancel {
+            background-color: #f44336;
+            margin-top: 10px;
+        }
+
+        .board_btn-cancel:hover {
+            background-color: #d32f2f;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .board_container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .board_btn {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .board_container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .board_btn {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="board_container">
+    <h1 class="board_title">게시글 작성</h1>
+
+    <!-- 게시글 작성 폼 -->
+    <form action="#" method="post">
+        <div class="board_form-group">
+            <label for="title" class="board_form-label">제목</label>
+            <input type="text" id="title" name="title" class="board_form-input" placeholder="제목을 입력하세요" required>
+        </div>
+
+        <div class="board_form-group">
+            <label for="author" class="board_form-label">작성자</label>
+            <input type="text" id="author" name="author" class="board_form-input" placeholder="작성자를 입력하세요" required>
+        </div>
+
+        <div class="board_form-group">
+            <label for="date" class="board_form-label">작성일</label>
+            <input type="text" id="date" name="date" class="board_form-input board_datepicker" placeholder="날짜를 선택하세요" required>
+        </div>
+
+        <div class="board_form-group">
+            <label for="content" class="board_form-label">내용</label>
+            <textarea id="content" name="content" class="board_form-textarea" placeholder="게시글 내용을 입력하세요" required></textarea>
+        </div>
+
+        <button type="submit" class="board_btn">게시글 작성</button>
+    </form>
+
+    <a href="board.html" class="board_btn board_btn-cancel">목록으로 돌아가기</a>
+</div>
+
+<!-- Flatpickr JS 추가 -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        flatpickr(".board_datepicker", {
+            enableTime: false,  // 시간 선택 비활성화
+            dateFormat: "Y-m-d",  // 날짜 포맷 (YYYY-MM-DD)
+            locale: "ko",  // 한글 로케일 적용
+            minDate: "today"  // 오늘 이후 날짜만 선택 가능
+        });
+    });
+</script>
+
+</body>
+</html>
