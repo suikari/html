@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txt {
+            font-size: 50px;
+            color : red;
+        }
+    </style>
+</head>
+<body>
+    <div id="txt">자바는 재밌다!</div>
+    <div>
+        <button onclick="fnColorChange()">색 변경</button>
+    </div>
+</body>
+</html>
+<script>
+    function fnColorChange(){
+        let txt = document.querySelector("#txt");   
+        if(txt.style.color == "blue"){
+            txt.style.color = "red";
+        } else {
+            txt.style.color = "blue";
+            txt.style.backgroundColor = "#eee";
+        }
+    }
+</script>

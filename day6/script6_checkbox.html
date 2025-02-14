@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><input type="checkbox" name="subject" value="java"><span>자바</span></div>
+    <div><input type="checkbox" name="subject" value="oracle"><span>오라클</span></div>
+    <div><input type="checkbox" name="subject" value="html"><span>html/css/javascsript</span></div>
+    <div><input type="checkbox" name="subject" value="jquery"><span>jQuery</span></div>
+    <div><button onclick="fnSubject()">클릭!</button></div>
+    <div id="imageList">
+       
+    </div>
+</body>
+</html>
+<script>
+    function fnSubject(){
+        let subject = document.querySelectorAll("input[name='subject']:checked");
+        let imageList = document.querySelector("#imageList");
+        imageList.innerHTML = "";
+        for(let i=0; i<subject.length; i++){
+            let img = document.createElement("img");
+            img.width = 200;
+            img.height = 200;
+            img.src = "image/" + subject[i].value + ".jpg";
+            imageList.appendChild(img);
+        }
+    }
+</script>

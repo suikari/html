@@ -6,9 +6,9 @@
     <title>Document</title>
     <style>
         #container{
-            width: 700px;
             background-color: #eee;
             display: flex;
+            justify-content: row;
         }
         .box {
             text-align: center;
@@ -17,26 +17,30 @@
             margin : 5px;
             background-color: bisque;
         }
-        .dir1{
-            flex-direction: row; /* 왼쪽에서 오른쪽 */
+        .wrap{
+            flex-wrap: nowrap; /* 한줄에 표시 */
         }
-        .dir2{
-            flex-direction: row-reverse; /* 오른쪽에서 왼쪽 */
-        }
-        .dir3{
-            flex-direction: column;
-        }
-        .dir4{
-            flex-direction: column-reverse;
+        .wrap2{
+            flex-wrap: wrap; /* 여러줄 표시 */
         }
     </style>
 </head>
 <body>
-    <div id="container" class="dir4">
+    <div id="container" class="wrap">
         <div class="box">box1</div>
         <div class="box">box2</div>
         <div class="box">box3</div>
         <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+        <div class="box">box7</div>
+        <div class="box">box8</div>
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+
     </div>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 700px;
+            background-image: url("poket1.png");
+            background-size: cover;
+            margin: 50px;
+            transition: transform 3s, background-image 1s 1s;
+        }
+        .box:hover {
+            transform: rotateY(180deg);
+            background-image: url("poket2.png");
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

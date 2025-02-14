@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 600px;
+            margin: 50px auto;
+            border : 1px solid black;
+            padding-bottom: 50px;
+        }
+        .light-mode {
+            background-color: white;
+            color : black;
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color : white;
+        }
+        #mode {
+            cursor: pointer;
+        }
+        #btn{
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            padding : 10px;
+            background-color: white;
+            border: 1px solid black;
+        }
+        .dark-mode #btn {
+            background-color: #222;
+            border: 1px solid white;
+            color : white;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <div id="container">
+        <button id="btn" onclick="fnMode()">다크 모드</button>
+        <h1>프로그래밍 재밌다~~</h1>
+        <ul>
+            <li>자바</li>
+            <li>자바스크립트</li>
+            <li>jQuery</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    function fnMode(){
+        let body = document.body;
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+        
+        let btn = document.querySelector("#btn");
+        if(body.classList.contains('dark-mode')){
+            btn.innerHTML = '라이트 모드';
+        } else {
+            btn.innerHTML = '다크 모드';
+        };
+    }
+</script>

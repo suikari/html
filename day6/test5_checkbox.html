@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><input type="checkbox" name="subject" value="java"><span>자바</span></div>
+    <div><input type="checkbox" name="subject" value="oracle"><span>오라클</span></div>
+    <div><input type="checkbox" name="subject" value="html"><span>html/css/javascript</span></div>
+    <div><input type="checkbox" name="subject" value="jquery"><span>jQuery</span></div>
+    <div><button onclick="fnTest()">클릭!</button></div>
+    <div id="imageContainer"></div>
+</body>
+</html>
+
+<script>
+    function fnTest() {
+        var checkboxes = document.querySelectorAll("input[name='subject']:checked");
+        var imageContainer = document.getElementById("imageContainer");
+
+        // 기존 이미지들 삭제
+        imageContainer.innerHTML = "";
+
+        // 선택된 항목에 해당하는 이미지를 추가
+        checkboxes.forEach(function(checkbox) {
+            var subject = checkbox.value;
+            var img = document.createElement("img");
+            img.width = 200;
+            img.height = 200;
+
+            if (subject === 'html') {
+                img.src = "image/html.jpg";
+            } else if (subject === 'java') {
+                img.src = "image/java.jpg";
+            } else if (subject === 'oracle') {
+                img.src = "image/oracle.jpg";
+            } else if (subject === 'jquery') {
+                img.src = "image/jquery.jpg";
+            }
+
+            imageContainer.appendChild(img); // 이미지 컨테이너에 이미지 추가
+        });
+    }
+</script>

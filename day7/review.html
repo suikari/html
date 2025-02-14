@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Programming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        #container {
+            width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        li {
+            cursor: pointer;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div id="container">            
+        <span class="material-symbols-outlined">
+            search
+            </span>
+            <span class="material-symbols-outlined">
+                settings
+                </span>
+        <h1>메모장</h1>       
+        <input type="text" id="txt" autofocus>
+        <button onclick="fnAdd();"><span class="material-symbols-outlined">
+            add
+            </span></button>
+        <hr>
+        <ul id="itemList"></ul>
+    </div>
+</body>
+</html>
+<script>
+    let list = document.querySelector("#itemList");
+    function fnAdd() {
+        let txt = document.querySelector("#txt").value;
+        let item = document.createElement("li");
+        item.innerHTML = txt + ' <span class="material-symbols-outlined">delete</span>';
+        item.onclick = function(e){
+            if(!confirm("정말 삭제하시겠습니까?")){
+                return;
+            };
+            list.removeChild(e.target);
+        }
+
+        list.appendChild(item);
+        document.querySelector("#txt").value = "";
+    }
+</script>

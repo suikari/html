@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        table, tr, td, th {
+            border: 1px solid;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        tr, td, th {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="fnUserList()">호출</button>
+    <div id="contents"></div>
+</body>
+</html>
+<script>
+    let table = document.createElement("table"); 
+    function fnUserList(){
+        table.innerHTML = "";
+        $.ajax({
+            url : "https://jsonplaceholder.typicode.com/users",
+            dataType : "json",
+            type : "GET",
+            data : {},
+            success : function(data) {      
+                let rowHeader = document.createElement("tr");
+                rowHeader.innerHTML = 
+                    "<th>아이디</th><th>이름</th><th>이메일</th><th>웹사이트</th>";
+                table.appendChild(rowHeader);
+                for(let i=0; i<data.length; i++){
+                    let row = document.createElement("tr"); 
+                    row.innerHTML = 
+                        "<td>" + data[i].id + "</td>"
+                        + "<td>" + data[i].name + "</td>"
+                        + "<td>" + data[i].email + "</td>"
+                        + "<td>" + data[i].website + "</td>"
+                    ;
+                    table.appendChild(row);                  
+                }
+                let contents = document.getElementById("contents");
+                contents.appendChild(table);
+            }
+        });
+    }
+</script>

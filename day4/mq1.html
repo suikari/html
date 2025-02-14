@@ -5,8 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            background: url(image/dw.jfif) no-repeat;
+        body{
+            background: url(images/img1.jpg) no-repeat fixed;
+            background-size: cover;
+        }
+
+        @media screen and (max-width : 1024px){
+            body{
+                background: url(images/img2.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+
+        @media screen and (max-width : 768px){
+            body{
+                background: url(images/img3.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+        @media screen and (max-width : 425px){
+            body{
+                background: url(../day2/media/img1.jpg) no-repeat fixed;
+                background-size: cover;
+            }
         }
 
     </style>

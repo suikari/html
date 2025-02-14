@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div + p { /* div 뒤에 오는 첫번째 p 태그에 스타일 적용*/
+            color : red;
+        }
+        div ~ p { /* div 뒤에 오는 모든 p 태그에 스타일 적용*/
+            background-color: aqua;
+        }
+        a[href] { /* a 태그 중에서 href 속성 가진 태그한테 스타일 적용*/
+            font-style: italic;
+        }
+      
+
+        
+    </style>
+</head>
+<body>
+    <div> * 과목 목록 </div>
+    <p> 자바 </p>
+    <p><a>오라클</a> </p>
+    
+    <p> <a href="#">HTML</a> </p>
+    <div>
+        <p>javascript</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div><input type="checkbox" name="subject" value="java"><span>자바</span></div>
+    <div><input type="checkbox" name="subject" value="oracle"><span>오라클</span></div>
+    <div><input type="checkbox" name="subject" value="html"><span>html/css/javascsript</span></div>
+    <div><input type="checkbox" name="subject" value="jquery"><span>jQuery</span></div>
+    <div><button onclick="fnSubject()">클릭!</button></div>
+</body>
+</html>
+<script>
+    function fnSubject(){
+        $(":checked").next().css("color", "red");
+    }
+</script>

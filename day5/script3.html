@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 500px;
+            margin : 10px auto;            
+        }
+        #time{
+            font-size: 40px;
+            color: blue;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="contatiner">
+        <div id="time"></div>
+    </div>
+</body>
+</html>
+<script>
+
+    // function fnAlert(){
+    //     alert("5초후 출력");
+    // }
+    // setTimeout(fnAlert, 5000);
+
+    // // 익명 함수
+    // setTimeout(function(){
+    //     alert("5초후 출력");
+    // }, 5000);
+
+    // // 화살표 함수(Arrow Function)
+    // setTimeout(()=>{
+    //     alert("5초후 출력");
+    // }, 5000);
+
+    setInterval(()=>{
+        let datetime = new Date();
+        let time 
+            = datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds();
+        let obj = document.querySelector("#time");    
+        obj.innerHTML = time;
+    }, 1000);
+
+
+</script>

@@ -9,18 +9,11 @@
 </head>
 <body>
     <div id="app">
-        <div v-if="name == ''">
-            <input v-model="inputName"></input>
-        </div>
-        <div v-else-if="name == '홍길동'">
-            {{name}}님은 개발자 입니다.
-        </div>
-        <div v-else>
-            <input v-model="inputName" disabled></input>
-        </div>
-        <div>{{name}}</div>
-        <button @click="fnName">클릭</button>
-    </div> 
+        <!-- 로그인 입력 필드 -->
+        <input type="text" v-model="id" placeholder="id">
+        <input type="password" v-model="password" placeholder="Password">
+        <button @click="fnLogin">Login</button>
+    </div>
 </body>
 </html>
 
@@ -28,17 +21,13 @@
     const app = Vue.createApp({
         data() {
             return {
-                // 변수
-                name : "",
-                age : "",
-                inputName : ""
+                id: '', // 로그인에 사용할 username
+                password: ''  // 로그인에 사용할 password
             };
         },
         methods: {
-            // 함수(메소드)
-            fnName : function(){
-                let self = this;
-                self.name = self.inputName;
+            fnLogin: function() {
+                
             }
         },
         mounted() {

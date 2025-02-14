@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><input type="radio" name="subject" value="java"><span>자바</span></div>
+    <div><input type="radio" name="subject" value="oracle"><span>오라클</span></div>
+    <div><input type="radio" name="subject" value="html"><span>html/css/javascsript</span></div>
+    <div><input type="radio" name="subject" value="jquery"><span>jQuery</span></div>
+    <div><button onclick="fnSubject()">클릭!</button></div>
+    <div>
+        <img width="300px" height="300px" 
+            src="" style="display: none;" alt="이미지">
+    </div>
+</body>
+</html>
+<script>
+    function fnSubject(){
+        let subject = document.querySelector("input[name='subject']:checked").value;
+        let img = document.querySelector("img");      
+        img.style.display = "inline";
+        img.src = "image/" + subject + ".jpg";
+
+        // if(subject == "java"){
+        //     img.src = "image/java.jpg";
+        // } else if(subject == "oracle"){
+        //     img.src = "image/oracle.jpg";
+        // } else if(subject == "html"){
+        //     img.src = "image/html.jpg";
+        // } else if(subject == "jquery"){
+        //     img.src = "image/jquery.jpg";
+        // }
+    }
+</script>

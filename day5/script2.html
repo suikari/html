@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label > span {
+            display: inline-block;
+            width: 120px;          
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label> <span>아이디 : </span>
+            <input id="userId">
+        </label>
+    </div>
+    <div>
+        <label><span>비밀번호 : </span>
+            <input type="password" id="pwd1">
+        </label>
+    </div>
+    <div>
+        <label><span>비밀번호 확인 : </span>
+            <input type="password" id="pwd2">
+        </label>
+    </div>
+    <div>
+        <label><span>성별 : </span></label>
+        <label><input type="radio" name="gender" value="m"> 남자</label>
+        <label><input type="radio" name="gender" value="f"> 여자</label>
+    </div>
+    <div>
+        <button onclick="fnJoin()">회원가입!</button>
+    </div>
+</body>
+</html>
+<script>
+    function fnJoin(){
+        // 아이디는 최소 6글자 이상
+        let userId = document.querySelector("#userId").value;
+        if(userId.length < 6){
+            alert("아이디는 6글자 이상이여야 합니다.");
+            return;
+        }
+        let pwd1 = document.querySelector("#pwd1").value;
+        let pwd2 = document.querySelector("#pwd2").value;
+        if(pwd1 != pwd2){
+            alert("비밀번호가 다릅니다");
+            return;
+        }
+        if(pwd1.length < 8){
+            alert("비밀번호는 8글자 이상이여야 합니다.");
+            return;
+        }
+        let list = document.getElementsByName("gender");
+        console.log(list[1].checked);
+        if(!list[0].checked && !list[1].checked){
+            alert("성별선택하세요.");
+            return;
+        }
+        alert("회원가입 성공!");
+        // for(let i=0; i<list.length; i++){
+        // }
+        // 회원가입 클릭 시
+        // 비밀번호를 2개 입력받아서 두 값이 다르면
+        // '비밀번호가 다릅니다' 출력
+        // 비밀번호가 8글자 미만이면
+        // '비밀번호는 8글자 이상이여야 합니다.' 출력
+        // ---------
+        
+
+        // radio 버튼으로 성별 선택
+        // 디폴트는 아무것도 체크 안된 상태
+        // 아무것도 체크안된상태에서 '회원가입' 버튼 클릭 시
+        // '성별을 선택해주세요' 출력
+
+    }
+</script>
